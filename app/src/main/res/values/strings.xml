@@ -7,8 +7,8 @@
     <string name="unidades">Unidades </string>
     <string name="btnCancelar">Cancelar</string>
     <string name="btnConfirmar">Confirmar</string>
-    <string name="txtIncrementF">Faltan Datos.</string>
-    <string name="txtIncrementT">Calculado Correctamente.</string>
+    <string name="txtIncrementFalse">Faltan Datos.</string>
+    <string name="txtIncrementTrue">Calculado Correctamente.</string>
     <string name="action_settings">Opciones</string>
 
 </resources>

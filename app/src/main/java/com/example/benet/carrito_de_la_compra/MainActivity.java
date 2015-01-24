@@ -55,15 +55,31 @@ public class MainActivity extends ActionBarActivity {
         EditText univalor2=(EditText)findViewById(R.id.txtp4);
 
         if(unidades1.getText().toString().length()!=0 && univalor1.getText().toString().length()!=0 &&
-           unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){
+           unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//todo esta relleno
+
             float a=(Integer.parseInt(unidades1.getText().toString())*(Float.parseFloat(univalor1.getText().toString())));
             float b=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
             float suma=a+b;
             TextView labelR=(TextView)findViewById(R.id.txtResult);
             labelR.setText(suma+" €");
-            Toast.makeText(this, R.string.txtIncrementT, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
+
+        }else if(unidades1.getText().toString().length()!=0 && univalor1.getText().toString().length()!=0){//se puede calcular el producto 1
+
+            float a=(Integer.parseInt(unidades1.getText().toString())*(Float.parseFloat(univalor1.getText().toString())));
+            TextView labelR=(TextView)findViewById(R.id.txtResult);
+            labelR.setText(a+" €");
+            Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
+
+        }else if(unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//se puede calcular e producto 2
+
+            float b=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
+            TextView labelR=(TextView)findViewById(R.id.txtResult);
+            labelR.setText(b+" €");
+            Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
+
         }else{
-            Toast.makeText(this, R.string.txtIncrementF, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.txtIncrementFalse, Toast.LENGTH_LONG).show();
         }
 
         ocultarTeclado(vista);
