@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Carrito_De_La_Compra</string>
+    <string name="producto1">Producto 1</string>
+    <string name="producto2">Producto 2</string>
+    <string name="unidades">Unidades </string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="btnConfirmar">Confirmar</string>
+    <string name="txtIncrementF">Faltan Datos.</string>
+    <string name="txtIncrementT">Calculado Correctamente.</string>
+    <string name="action_settings">Opciones</string>
+
+</resources>
