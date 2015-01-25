@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
             labelR.setText(a+" €");
             Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
 
-        }else if(unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//se puede calcular e producto 2
+        }else if(unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//se puede calcular el producto 2
 
             float b=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
             TextView labelR=(TextView)findViewById(R.id.txtResult);
