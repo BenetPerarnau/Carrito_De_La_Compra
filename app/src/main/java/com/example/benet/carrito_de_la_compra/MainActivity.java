@@ -15,11 +15,19 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    EditText unidades1, univalor1,unidades2,univalor2;
+    TextView labelR;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        unidades1=(EditText)findViewById(R.id.txtp1);
+        univalor1=(EditText)findViewById(R.id.txtp2);
+        unidades2=(EditText)findViewById(R.id.txtp3);
+        univalor2=(EditText)findViewById(R.id.txtp4);
+        labelR=(TextView)findViewById(R.id.txtResult);
 
     }
 
@@ -29,14 +37,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void resetear(View vista){
-
-        EditText unidades1=(EditText)findViewById(R.id.txtp1);
-        EditText univalor1=(EditText)findViewById(R.id.txtp2);
-
-        EditText unidades2=(EditText)findViewById(R.id.txtp3);
-        EditText univalor2=(EditText)findViewById(R.id.txtp4);
-
-        TextView labelR=(TextView)findViewById(R.id.txtResult);
 
         unidades1.setText("");
         univalor1.setText("");
@@ -48,34 +48,27 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public void calcular(View vista){
-
-        EditText unidades1=(EditText)findViewById(R.id.txtp1);
-        EditText univalor1=(EditText)findViewById(R.id.txtp2);
-        EditText unidades2=(EditText)findViewById(R.id.txtp3);
-        EditText univalor2=(EditText)findViewById(R.id.txtp4);
-
+        try {
         if(unidades1.getText().toString().length()!=0 && univalor1.getText().toString().length()!=0 &&
            unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//todo esta relleno
 
-            float a=(Integer.parseInt(unidades1.getText().toString())*(Float.parseFloat(univalor1.getText().toString())));
-            float b=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
-            float suma=a+b;
-            TextView labelR=(TextView)findViewById(R.id.txtResult);
-            labelR.setText(suma+" €");
-            Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
+                float a = (Integer.parseInt(unidades1.getText().toString()) * (Float.parseFloat(univalor1.getText().toString())));
+                float b = (Integer.parseInt(unidades2.getText().toString()) * (Float.parseFloat(univalor2.getText().toString())));
+                float suma = a + b;
+                labelR.setText(suma + " €");
+                Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
+
 
         }else if(unidades1.getText().toString().length()!=0 && univalor1.getText().toString().length()!=0){//se puede calcular el producto 1
 
-            float a=(Integer.parseInt(unidades1.getText().toString())*(Float.parseFloat(univalor1.getText().toString())));
-            TextView labelR=(TextView)findViewById(R.id.txtResult);
-            labelR.setText(a+" €");
+            float r=(Integer.parseInt(unidades1.getText().toString())*(Float.parseFloat(univalor1.getText().toString())));
+            labelR.setText(r+" €");
             Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
 
         }else if(unidades2.getText().toString().length()!=0 &&univalor2.getText().toString().length()!=0){//se puede calcular el producto 2
 
-            float b=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
-            TextView labelR=(TextView)findViewById(R.id.txtResult);
-            labelR.setText(b+" €");
+            float r=(Integer.parseInt(unidades2.getText().toString())*(Float.parseFloat(univalor2.getText().toString())));
+            labelR.setText(r+" €");
             Toast.makeText(this, R.string.txtIncrementTrue, Toast.LENGTH_LONG).show();
 
         }else{
@@ -83,6 +76,9 @@ public class MainActivity extends ActionBarActivity {
         }
 
         ocultarTeclado(vista);
+        }catch(NumberFormatException e){
+            e.printStackTrace();
+        }
     }
 
 
